@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joemy Even's - Karaoké</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
+text-align:center;
+padding:20px;
+}
+
+h1{
+color:#d4af37;
+}
+
+input{
+width:90%;
+max-width:500px;
+padding:12px;
+font-size:18px;
+border-radius:8px;
+border:none;
+margin-bottom:20px;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+padding:10px;
+border-bottom:1px solid #333;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎤 JOEMY EVEN'S</h1>
+<h2>Recherche Karaoké</h2>
+
+<input type="text" id="search" placeholder="Rechercher un titre ou un artiste">
+
+<ul id="songs">
+<li>Johnny Hallyday - Allumer le feu</li>
+<li>Indochine - J'ai demandé à la lune</li>
+<li>Jean-Jacques Goldman - Envole-moi</li>
+<li>Patrick Bruel - Casser la voix</li>
+<li>Kendji Girac - Andalouse</li>
+<li>Claudio Capéo - Un homme debout</li>
+<li>Édith Piaf - La vie en rose</li>
+<li>Amir - J'ai cherché</li>
+<li>Vitaa & Slimane - Avant toi</li>
+<li>Céline Dion - Pour que tu m'aimes encore</li>
+</ul>
+
+<script>
+const search = document.getElementById("search");
+const songs = document.querySelectorAll("#songs li");
+
+search.addEventListener("keyup", function() {
+const value = this.value.toLowerCase();
+
+songs.forEach(song => {
+song.style.display =
+song.textContent.toLowerCase().includes(value)
+? ""
+: "none";
+});
+});
+</script>
+
+</body>
+</html>
