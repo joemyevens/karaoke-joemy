@@ -1,52 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joemy Even's - Catalogue Karaoké</title>
+
+<style>
+body{
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:gold;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    color:#ddd;
+    font-size:18px;
+}
+
+#search{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    border-radius:10px;
+    border:2px solid gold;
+    margin:20px 0;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    background:#222;
+    margin:5px 0;
+    padding:12px;
+    border-left:5px solid gold;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎤 JOEMY EVEN'S 🎤</h1>
+<h2>Catalogue Karaoké</h2>
+
+<input type="text" id="search" placeholder="Rechercher un artiste ou un titre...">
+
 <ul id="songs">
 <li>Johnny Hallyday - Allumer le feu</li>
-<li>Michel Sardou - Les Lacs du Connemara</li>
 <li>Céline Dion - J'irai où tu iras</li>
-<li>Joe Dassin - Les Champs-Élysées</li>
-<li>Manau - La tribu de Dana</li>
 <li>Indochine - J'ai demandé à la lune</li>
 <li>Jean-Jacques Goldman - Envole-moi</li>
-<li>Patrick Bruel - Casser la voix</li>
-<li>Kendji Girac - Andalouse</li>
-<li>Claudio Capéo - Un homme debout</li>
-<li>Édith Piaf - La vie en rose</li>
-<li>Amir - J'ai cherché</li>
-<li>Vitaa & Slimane - Avant toi</li>
-<li>Céline Dion - Pour que tu m'aimes encore</li>
-<li>Louane - Avenir</li>
-<li>Zaz - Je veux</li>
-<li>Julien Doré - Paris-Seychelles</li>
-<li>Florent Pagny - Savoir aimer</li>
-<li>Daniel Balavoine - Mon fils ma bataille</li>
-<li>France Gall - Résiste</li>
-<li>Gold - Plus près des étoiles</li>
-<li>Téléphone - Ça c'est vraiment toi</li>
-<li>Renaud - Mistral gagnant</li>
-<li>Francis Cabrel - Je l'aime à mourir</li>
-<li>Patrick Fiori - Que tu reviennes</li>
-<li>Calogero - En apesanteur</li>
-<li>M. Pokora - Juste une photo de toi</li>
-<li>Christophe Maé - On s'attache</li>
-<li>Vianney - Pas là</li>
-<li>Zazie - Rue de la paix</li>
-<li>Shallow - A Star Is Born</li>
 <li>Queen - Bohemian Rhapsody</li>
 <li>ABBA - Dancing Queen</li>
-<li>The Beatles - Hey Jude</li>
-<li>Elvis Presley - Can't Help Falling In Love</li>
-<li>Bon Jovi - It's My Life</li>
-<li>Scorpions - Wind of Change</li>
-<li>Eagles - Hotel California</li>
-<li>Adele - Someone Like You</li>
 <li>Ed Sheeran - Perfect</li>
 <li>Bruno Mars - Just The Way You Are</li>
-<li>Lady Gaga - Always Remember Us This Way</li>
-<li>Imagine Dragons - Demons</li>
 <li>Coldplay - Viva La Vida</li>
-<li>Maroon 5 - Memories</li>
 <li>Linkin Park - Numb</li>
-<li>Oasis - Wonderwall</li>
-<li>The Cranberries - Zombie</li>
-<li>Whitney Houston - I Will Always Love You</li>
-<li>Tina Turner - Simply The Best</li>
 </ul>
+
+<script>
+const search = document.getElementById("search");
+const songs = document.querySelectorAll("#songs li");
+
+search.addEventListener("keyup", function(){
+let value = this.value.toLowerCase();
+
+songs.forEach(song=>{
+song.style.display =
+song.textContent.toLowerCase().includes(value)
+? "block"
+: "none";
+});
+});
+</script>
+
+</body>
+</html>
