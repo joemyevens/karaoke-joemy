@@ -1,240 +1,31 @@
+<!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Joemy Even's - Karaoké</title>
-
-<style>
-
-body{
-
-background:#111;
-
-color:white;
-
-font-family:Arial,sans-serif;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-h1{color:#d4af37;}
-
-input{
-
-width:90%;
-
-max-width:500px;
-
-padding:12px;
-
-font-size:18px;
-
-border-radius:8px;
-
-border:none;
-
-margin-bottom:20px;
-
-}
-
-#counter{
-
-color:#d4af37;
-
-margin-bottom:15px;
-
-}
-
-ul{
-
-list-style:none;
-
-padding:0;
-
-max-width:800px;
-
-margin:auto;
-
-}
-
-li{
-
-padding:10px;
-
-border-bottom:1px solid #333;
-
-text-align:left;
-
-}
-
-</style>
-
+<title>Test Karaoké</title>
 </head>
+<body style="background:black;color:white;">
 
-<body>
-
-<h1>🎤 JOEMY EVEN'S</h1>
-
-<h2>Recherche Karaoké</h2>
-
-
-
-<input type="text" id="search" placeholder="Rechercher un titre ou un artiste">
-
-<div id="counter"></div>
-
-
+<h1>JOEMY EVEN'S</h1>
 
 <ul id="songs"></ul>
 
-
-
 <script>
-
 const songList = [
-
 "Adele - Hello",
-"Adele - Someone Like You",
-"Adele - Rolling In The Deep",
 "Amir - J'ai cherché",
-"Amel Bent - Ma philosophie",
-"Andrea Bocelli - Vivo per lei",
-"Angèle - Balance ton quoi",
-"Bon Jovi - It's My Life",
-"Bruno Mars - Uptown Funk",
-"Coldplay - Viva La Vida",
-"Ed Sheeran - Perfect",
-"Queen - Bohemian Rhapsody",
-"Vianney - Pas là",
-"Zaz - Je veux",
-"Depeche Mode - Enjoy The Silence",
-"DJ Snake - Let Me Love You",
-"Florent Pagny - Savoir aimer",
-"Gilbert Montagné - On va s'aimer",
-"Jean-Jacques Goldman - Envole-moi",
-"ABBA - Dancing Queen",
-"ABBA - Mamma Mia",
-"ABBA - Waterloo",
-"Alain Souchon - Foule sentimentale",
-"Alain Souchon - Bidon",
-"Angèle - Libre",
-"Axelle Red - Sensualité",
-"Aerosmith - I Don't Want To Miss A Thing",
-"Black M - Sur ma route",
-"Bob Marley - No Woman No Cry",
-"Bon Jovi - Livin' On A Prayer",
-"Bruce Springsteen - Born In The USA",
-"Calogero - Face à la mer",
-"Calogero - En apesanteur",
-"Céline Dion - Pour que tu m'aimes encore",
-"Céline Dion - J'irai où tu iras",
-"Charles Aznavour - La Bohème",
-"Christophe Maé - On s'attache",
-"Claudio Capéo - Un homme debout",
-"David Bowie - Heroes",
-"David Guetta - Memories",
-"David Guetta - When Love Takes Over",
-"Diam's - La boulette",
-"Elton John - Your Song",
-"Elvis Presley - Can't Help Falling In Love",
-"France Gall - Résiste",
-"France Gall - Il jouait du piano debout",
-"GIMS - Bella",
-"GIMS - Ciel",
-"Images - Les démons de minuit",
-"Indochine - J'ai demandé à la lune",
-"Indochine - L'aventurier",
-"Joe Dassin - Les Champs-Élysées",
-"Joe Dassin - Dans les yeux d'Émilie",
-"Johnny Hallyday - Allumer le feu",
-"Johnny Hallyday - Je te promets",
-"Kendji Girac - Andalouse",
-"Kendji Girac - Color Gitano",
-"Lady Gaga - Shallow",
-"Lady Gaga - Always Remember Us This Way",
-"Louane - Avenir",
-"Louise Attaque - J't'emmène au vent",
-"Manau - La tribu de Dana",
-"Maroon 5 - Memories",
-"Michel Sardou - Les Lacs du Connemara",
-"Mika - Elle me dit",
-"Mylène Farmer - Désenchantée",
-"Patrick Bruel - Casser la voix",
-"Renaud - Mistral gagnant",
-"Slimane - Des milliers de je t'aime",
-"Téléphone - Ça c'est vraiment toi",
-"Whitney Houston - I Will Always Love You"
+"Queen - Bohemian Rhapsody"
 ];
-
 
 const songsContainer = document.getElementById("songs");
 
-
-
 songList.forEach(title => {
-
   const li = document.createElement("li");
-
   li.textContent = title;
-
   songsContainer.appendChild(li);
-
 });
-
-
-
-const search = document.getElementById("search");
-
-
-
-function updateCounter(){
-
-  const visible = [...document.querySelectorAll("#songs li")]
-
-    .filter(li => li.style.display !== "none").length;
-
-  document.getElementById("counter").textContent =
-
-    visible + " chanson(s) trouvée(s)";
-
-}
-
-
-
-search.addEventListener("keyup", function() {
-
-  const value = this.value.toLowerCase();
-
-
-
-  document.querySelectorAll("#songs li").forEach(song => {
-
-    song.style.display =
-
-      song.textContent.toLowerCase().includes(value) ? "" : "none";
-
-  });
-
-
-
-  updateCounter();
-
-});
-
-
-
-updateCounter();
-
 </script>
 
 </body>
-
 </html>
-.
